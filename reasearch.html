@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Notes — Otacon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #050707;
+      color: #e5fff0;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 3px
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.4;
+      z-index: 5;
+    }
+
+    .frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2bff9b;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: #2bff9b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      color: #e5fff0;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: #2bff9b;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* PANEL */
+    .panel {
+      border: 1px solid #2bff9b;
+      background: radial-gradient(circle at top left, #0b1510 0, #050707 55%);
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.5rem;
+    }
+
+    .panel-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.6rem;
+      color: #e5fff0;
+      margin: 0 0 1rem;
+    }
+
+    /* NOTES */
+    .note {
+      border: 1px solid #1ddf80;
+      background: rgba(5, 12, 9, 0.9);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .note-label {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.3rem;
+    }
+
+    .note-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: #e5fff0;
+      margin: 0 0 0.4rem;
+    }
+
+    .note-text {
+      font-size: 0.9rem;
+      color: #c4f7dd;
+      line-height: 1.5;
+    }
+
+    .soft-note {
+      font-size: 0.85rem;
+      color: #9be9c4;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <div class="frame">
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Otacon // Systems Interface</div>
+      <div class="nav-links">
+        <a href="index.html">Hub</a>
+        <a href="systems.html">Systems Log</a>
+        <a href="research.html">Research Notes</a>
+        <a href="diagnostics.html">Diagnostics</a>
+        <a href="comms.html">Communications</a>
+      </div>
+    </nav>
+
+    <!-- PANEL -->
+    <section class="panel">
+      <div class="panel-header">Module 02</div>
+      <h1 class="panel-title">Research Notes</h1>
+
+      <p class="soft-note">
+        “These aren’t finished ideas. Just things I’m thinking about, or trying to think about.
+        Sometimes writing them down helps me make sense of them.”
+      </p>
+
+      <!-- NOTE 1 -->
+      <div class="note">
+        <div class="note-label">Note 01</div>
+        <h2 class="note-title">Interface Responsiveness</h2>
+        <div class="note-text">
+          I’ve been wondering if the UI could feel a little smoother. It’s already fast,
+          but maybe there’s a way to make transitions feel more natural. Something subtle.
+        </div>
+      </div>
+
+      <!-- NOTE 2 -->
+      <div class="note">
+        <div class="note-label">Note 02</div>
+        <h2 class="note-title">Data Organization</h2>
+        <div class="note-text">
+          I keep reorganizing my folders, but I’m not sure I’ve found the perfect structure yet.
+          Maybe there isn’t one. Maybe that’s okay.
+        </div>
+      </div>
+
+      <!-- NOTE 3 -->
+      <div class="note">
+        <div class="note-label">Note 03</div>
+        <h2 class="note-title">System Load Patterns</h2>
+        <div class="note-text">
+          I noticed the system tends to spike at the same time every day. It’s probably just
+          routine tasks running in the background, but I want to look into it more.
+        </div>
+      </div>
+
+      <!-- NOTE 4 -->
+      <div class="note">
+        <div class="note-label">Note 04</div>
+        <h2 class="note-title">Personal Thought</h2>
+        <div class="note-text">
+          I should probably take breaks more often. I keep telling myself that, but then I get
+          caught up in something and forget. Again.
+        </div>
+      </div>
+
+    </section>
+  </div>
+</body>
+</html>
