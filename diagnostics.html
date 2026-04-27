@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnostics — Otacon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #050707;
+      color: #e5fff0;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 3px
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.4;
+      z-index: 5;
+    }
+
+    .frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2bff9b;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: #2bff9b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      color: #e5fff0;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: #2bff9b;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* PANEL */
+    .panel {
+      border: 1px solid #2bff9b;
+      background: radial-gradient(circle at top left, #0b1510 0, #050707 55%);
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.5rem;
+    }
+
+    .panel-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.6rem;
+      color: #e5fff0;
+      margin: 0 0 1rem;
+    }
+
+    /* DIAGNOSTIC BLOCKS */
+    .diag {
+      border: 1px solid #1ddf80;
+      background: rgba(5, 12, 9, 0.9);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .diag-label {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.3rem;
+    }
+
+    .diag-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: #e5fff0;
+      margin: 0 0 0.4rem;
+    }
+
+    .diag-text {
+      font-size: 0.9rem;
+      color: #c4f7dd;
+      line-height: 1.5;
+    }
+
+    .soft-note {
+      font-size: 0.85rem;
+      color: #9be9c4;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <div class="frame">
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Otacon // Systems Interface</div>
+      <div class="nav-links">
+        <a href="index.html">Hub</a>
+        <a href="systems.html">Systems Log</a>
+        <a href="research.html">Research Notes</a>
+        <a href="diagnostics.html">Diagnostics</a>
+        <a href="comms.html">Communications</a>
+      </div>
+    </nav>
+
+    <!-- PANEL -->
+    <section class="panel">
+      <div class="panel-header">Module 03</div>
+      <h1 class="panel-title">Diagnostics</h1>
+
+      <p class="soft-note">
+        “Running a few harmless checks. Nothing dramatic. Just making sure everything is
+        behaving the way it’s supposed to… which, honestly, is more than I can say for myself some days.”
+      </p>
+
+      <!-- DIAG 1 -->
+      <div class="diag">
+        <div class="diag-label">Check 01</div>
+        <h2 class="diag-title">System Stability</h2>
+        <div class="diag-text">
+          All core processes are running smoothly. No unexpected slowdowns or unusual behavior.
+          I guess that means I can stop worrying about it… for now.
+        </div>
+      </div>
+
+      <!-- DIAG 2 -->
+      <div class="diag">
+        <div class="diag-label">Check 02</div>
+        <h2 class="diag-title">Memory Usage</h2>
+        <div class="diag-text">
+          Usage levels are normal. I cleared out a few temporary files just to be safe.
+          It’s probably unnecessary, but it makes me feel better.
+        </div>
+      </div>
+
+      <!-- DIAG 3 -->
+      <div class="diag">
+        <div class="diag-label">Check 03</div>
+        <h2 class="diag-title">Peripheral Status</h2>
+        <div class="diag-text">
+          All connected devices are responding correctly. One of the sensors took a moment
+          longer than usual to initialize, but it resolved itself. I’ll keep an eye on it.
+        </div>
+      </div>
+
+      <!-- DIAG 4 -->
+      <div class="diag">
+        <div class="diag-label">Check 04</div>
+        <h2 class="diag-title">Interface Health</h2>
+        <div class="diag-text">
+          UI elements are rendering properly. I adjusted the brightness slightly — the green
+          looked a little too sharp earlier. Maybe I’m just picky.
+        </div>
+      </div>
+
+      <!-- DIAG 5 -->
+      <div class="diag">
+        <div class="diag-label">Check 05</div>
+        <h2 class="diag-title">Personal Note</h2>
+        <div class="diag-text">
+          I should probably stretch or something. Sitting here running diagnostics on a system
+          that’s already fine is… well, it’s very me.
+        </div>
+      </div>
+
+    </section>
+  </div>
+</body>
+</html>
