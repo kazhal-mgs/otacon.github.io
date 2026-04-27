@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Systems Log — Otacon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #050707;
+      color: #e5fff0;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 3px
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.4;
+      z-index: 5;
+    }
+
+    .frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2bff9b;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: #2bff9b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      color: #e5fff0;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: #2bff9b;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* PANEL */
+    .panel {
+      border: 1px solid #2bff9b;
+      background: radial-gradient(circle at top left, #0b1510 0, #050707 55%);
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.5rem;
+    }
+
+    .panel-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.6rem;
+      color: #e5fff0;
+      margin: 0 0 1rem;
+    }
+
+    /* LOG ENTRIES */
+    .log-entry {
+      border: 1px solid #1ddf80;
+      background: rgba(5, 12, 9, 0.9);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .log-label {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.3rem;
+    }
+
+    .log-text {
+      font-size: 0.9rem;
+      color: #c4f7dd;
+      line-height: 1.5;
+    }
+
+    .soft-note {
+      font-size: 0.85rem;
+      color: #9be9c4;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <div class="frame">
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Otacon // Systems Interface</div>
+      <div class="nav-links">
+        <a href="index.html">Hub</a>
+        <a href="systems.html">Systems Log</a>
+        <a href="research.html">Research Notes</a>
+        <a href="diagnostics.html">Diagnostics</a>
+        <a href="comms.html">Communications</a>
+      </div>
+    </nav>
+
+    <!-- PANEL -->
+    <section class="panel">
+      <div class="panel-header">Module 01</div>
+      <h1 class="panel-title">Systems Log</h1>
+
+      <p class="soft-note">
+        “I guess this is where I keep track of everything I’m tinkering with.
+        It helps me stay organized… or at least pretend I am.”
+      </p>
+
+      <!-- ENTRY 1 -->
+      <div class="log-entry">
+        <div class="log-label">Entry 01 — Routine Check</div>
+        <div class="log-text">
+          Ran a quick sweep of the main workstation. Everything seems stable.
+          I tightened a few loose cables even though they weren’t causing issues.
+          It just felt like the right thing to do.
+        </div>
+      </div>
+
+      <!-- ENTRY 2 -->
+      <div class="log-entry">
+        <div class="log-label">Entry 02 — System Behavior</div>
+        <div class="log-text">
+          Noticed a slight delay in one of the auxiliary monitors. Probably nothing,
+          but I logged it anyway. Better safe than confused later.
+        </div>
+      </div>
+
+      <!-- ENTRY 3 -->
+      <div class="log-entry">
+        <div class="log-label">Entry 03 — Personal Note</div>
+        <div class="log-text">
+          I reorganized my folders again. I know no one else will ever see them,
+          but it still feels important to keep things tidy. Or… tidy‑ish.
+        </div>
+      </div>
+
+      <!-- ENTRY 4 -->
+<div class="log-entry">
+  <div class="log-label">Entry 04 — Minor Adjustment</div>
+  <div class="log-text">
+    Cleaned up a few old configuration files. I kept backups, of course.
+    I always keep backups. Sometimes I think I have backups of my backups.
+  </div>
+</div>
+
+<!-- ENTRY 5 -->
+<div class="log-entry">
+  <div class="log-label">Entry 05 — Interface Note</div>
+  <div class="log-text">
+    Updated the UI color calibration. The green looked a little too bright earlier.
+    Maybe no one else would notice, but… I did.
+  </div>
+</div>
+
+<!-- ENTRY 6 -->
+<div class="log-entry">
+  <div class="log-label">Entry 06 — Observation</div>
+  <div class="log-text">
+    One of the fans made a soft clicking noise for about three seconds.
+    It stopped on its own, but I wrote it down anyway. Just in case.
+  </div>
+</div>
+
+<!-- ENTRY 7 -->
+<div class="log-entry">
+  <div class="log-label">Entry 07 — Organization Attempt</div>
+  <div class="log-text">
+    Tried reorganizing my desktop icons again. I’m not sure if it’s better now,
+    but at least everything is in neat little rows. For the moment.
+  </div>
+</div>
+
+<!-- ENTRY 8 -->
+<div class="log-entry">
+  <div class="log-label">Entry 08 — System Mood</div>
+  <div class="log-text">
+    Everything feels stable today. I know machines don’t really have moods,
+    but sometimes it’s nice to pretend they do. Makes the room feel less empty.
+  </div>
+</div>
+
+<!-- ENTRY 9 -->
+<div class="log-entry">
+  <div class="log-label">Entry 09 — Personal Reminder</div>
+  <div class="log-text">
+    Remember to take a break later. I keep telling myself that, but I’m not
+    very good at listening to my own reminders.
+  </div>
+</div>
+
+
+    </section>
+  </div>
+</body>
+</html>
