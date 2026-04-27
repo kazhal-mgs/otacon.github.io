@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Otacon Systems Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #050707;
+      color: #e5fff0;
+    }
+
+    /* GLOBAL */
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 3px
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.4;
+      z-index: 5;
+    }
+
+    .frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2bff9b;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: #2bff9b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      color: #e5fff0;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: #2bff9b;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO / MAIN PANEL */
+    .panel {
+      border: 1px solid #2bff9b;
+      background: radial-gradient(circle at top left, #0b1510 0, #050707 55%);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.5rem;
+    }
+
+    .panel-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.8rem;
+      color: #e5fff0;
+      margin: 0 0 0.75rem;
+    }
+
+    .panel-sub {
+      font-size: 0.95rem;
+      color: #c4f7dd;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+
+    .soft-note {
+      font-size: 0.85rem;
+      color: #9be9c4;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* GRID OF MODULES */
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .module {
+      border: 1px solid #1ddf80;
+      background: rgba(5, 12, 9, 0.9);
+      padding: 0.9rem;
+    }
+
+    .module-label {
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      margin-bottom: 0.3rem;
+    }
+
+    .module-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+      color: #e5fff0;
+    }
+
+    .module-text {
+      font-size: 0.85rem;
+      color: #c4f7dd;
+      margin-bottom: 0.6rem;
+    }
+
+    .module a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #2bff9b;
+      text-decoration: none;
+    }
+
+    .status-bar {
+      margin-top: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #8bffd0;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .status-item span {
+      color: #2bff9b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <div class="frame">
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Otacon // Systems Interface</div>
+      <div class="nav-links">
+        <a href="index.html">Hub</a>
+        <a href="systems.html">Systems Log</a>
+        <a href="research.html">Research Notes</a>
+        <a href="diagnostics.html">Diagnostics</a>
+        <a href="comms.html">Communications</a>
+      </div>
+    </nav>
+
+    <!-- MAIN PANEL -->
+    <section class="panel">
+      <div class="panel-header">Primary Console</div>
+      <h1 class="panel-title">Hal “Otacon” Emmerich</h1>
+
+      <p class="panel-sub">
+        Engineering interface for ongoing projects, system logs, and diagnostics. Designed
+        for quick access to the things I’m… probably overthinking about anyway.
+      </p>
+
+      <p class="soft-note">
+        “If you’re seeing this, you’ve somehow found your way into my workspace.
+        Don’t worry—nothing classified. Just a lot of notes, tests, and half‑finished ideas.”
+      </p>
+
+      <div class="modules">
+        <div class="module">
+          <div class="module-label">Module 01</div>
+          <h2 class="module-title">Systems Log</h2>
+          <p class="module-text">
+            Day‑to‑day notes on system behavior, configuration changes, and small fixes that
+            would be easy to forget later.
+          </p>
+          <a href="systems.html">Open Log &gt;</a>
+        </div>
+
+        <div class="module">
+          <div class="module-label">Module 02</div>
+          <h2 class="module-title">Research Notes</h2>
+          <p class="module-text">
+            Concept sketches, technical thoughts, and observations that don’t quite qualify
+            as “finished work” yet.
+          </p>
+          <a href="research.html">View Notes &gt;</a>
+        </div>
+
+        <div class="module">
+          <div class="module-label">Module 03</div>
+          <h2 class="module-title">Diagnostics</h2>
+          <p class="module-text">
+            Status checks, test results, and small self‑audits to make sure everything is
+            still running the way it should.
+          </p>
+          <a href="diagnostics.html">Run Diagnostics &gt;</a>
+        </div>
+
+        <div class="module">
+          <div class="module-label">Module 04</div>
+          <h2 class="module-title">Communications</h2>
+          <p class="module-text">
+            Logged messages, summaries, and a few notes I didn’t want to lose track of.
+            Nothing too dramatic. Hopefully.
+          </p>
+          <a href="comms.html">Open Channel &gt;</a>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-item">USER: <span>OTACON</span></div>
+        <div class="status-item">MODE: <span>LAB</span></div>
+        <div class="status-item">VISIBILITY: <span>PERSONAL</span></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
